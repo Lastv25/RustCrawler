@@ -13,7 +13,8 @@ Rust application to learn rust and crawl entities on the web
 ## TODOs
 
 - [ ] Fetch links and save them
-    - [ ] Rust google calls
+    - [X] Check that robot file does not disallow scrap
+    - [ ] Rust google calls or on api. search for a solution
     - [ ] Rust sqlite interface
     - [ ] Result as cli
  
