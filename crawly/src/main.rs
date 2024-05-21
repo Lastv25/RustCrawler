@@ -1,5 +1,5 @@
 use reqwest::Client;
-use scraper::{Html, Selector};
+// use scraper::{Html, Selector};
 use std::io;
 use url::Url;
 
@@ -16,7 +16,7 @@ fn starting_website_input() -> Result<(String, String), Box<dyn std::error::Erro
     let path = url.path().to_owned();
     let base = format!("{}://{}", url.scheme(), url.host().unwrap());
 
-    return Ok((path, base));
+    Ok((path, base))
 }
 
 fn search_query_input() -> Result<String, Box<dyn std::error::Error>>{
@@ -25,7 +25,7 @@ fn search_query_input() -> Result<String, Box<dyn std::error::Error>>{
     let mut search_query = String::new();
     io::stdin().read_line(&mut search_query).expect("Failed to read search_query");
     let search_query = search_query.trim().to_string();
-    return Ok(search_query);
+    Ok(search_query)
 }
 
 async fn is_path_allowed_for_website(base: String, path: String) -> Result<bool, Box<dyn std::error::Error>>{
@@ -56,7 +56,7 @@ async fn is_path_allowed_for_website(base: String, path: String) -> Result<bool,
             }
         }
     }
-    return Ok(true);
+    Ok(true)
 }
 
 #[tokio::main]
@@ -68,7 +68,8 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     let is_allowed = is_path_allowed_for_website(base,path).await?;
     println!("Is path Allowed: {}", is_allowed);
-    // let search_query = search_query_input()?;
+    
+    let search_query = search_query_input()?;
 
     Ok(())
 }
