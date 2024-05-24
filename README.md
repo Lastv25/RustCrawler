@@ -14,7 +14,7 @@ Rust application to learn rust and crawl entities on the web
 
 - [ ] Fetch links and save them
     - [X] Check that robot file does not disallow scrap
-    - [ ] Rust google calls or on api. search for a solution
+    - [ ] Rust google calls or on api. search for a solution (https://serpdog.io/blog/web-scraping-google-with-rust/)
     - [ ] Rust sqlite interface
     - [ ] Result as cli
  
